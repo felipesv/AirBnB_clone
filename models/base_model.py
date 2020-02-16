@@ -40,7 +40,7 @@ class BaseModel:
 
     def to_dict(self):
         """returns a dictionary containing all keys/values"""
-        new_dict = self.__dict__
+        new_dict = self.__dict__.copy()
         new_dict['__class__'] = self.__class__.__name__
         cr_at = self.created_at.strftime('%Y-%m-%dT%H:%M:%S.%f')
         up_at = self.updated_at.strftime('%Y-%m-%dT%H:%M:%S.%f')

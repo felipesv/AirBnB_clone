@@ -6,7 +6,6 @@ import json
 from models.base_model import BaseModel
 
 
-
 class FileStorage:
     """
     serializes instances to JSON and deserializes JSON to instances

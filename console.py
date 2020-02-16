@@ -27,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class name missing **")
                 return
 
-        listClass = ["BaseModel"]
+        listClass = ["BaseModel", "User", "Place", "State", "City", "Amenity"]
         data = line.split(" ")
         nameClass = data[0]
 
@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
-        listClass = ["BaseModel"]
+        listClass = ["BaseModel", "User", "Place", "State", "City", "Amenity"]
         data = line.split(" ")
         nameClass = data[0]
 
@@ -67,7 +67,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
-        listClass = ["BaseModel"]
+        listClass = ["BaseModel", "User", "Place", "State", "City", "Amenity"]
         data = line.split(" ")
         nameClass = data[0]
 
@@ -108,7 +108,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
-        listClass = ["BaseModel"]
+        listClass = ["BaseModel", "User", "Place", "State", "City", "Amenity"]
         data = line.split(" ")
         dictObj = storage.all()
 
