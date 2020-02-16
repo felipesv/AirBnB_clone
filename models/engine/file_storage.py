@@ -31,7 +31,7 @@ class FileStorage:
 
     def save(self):
         """serializes __objects to the JSON file"""
-        data = self.__objects.copy()
+        data = {}
         for key, value in self.__objects.items():
             data[key] = value.to_dict()
 
@@ -47,7 +47,6 @@ class FileStorage:
                 data = json.load(file)
                 for key, value in data.items():
                     nameClass = value["__class__"]
-                    del value["__class__"]
                     newobj = eval(nameClass)(**value)
                     FileStorage.__objects[key] = newobj
         except Exception:
