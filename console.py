@@ -2,6 +2,12 @@
 '''create a console'''
 import cmd
 from models.base_model import BaseModel
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.user import User
 from models import storage
 from datetime import datetime
 
@@ -33,6 +39,7 @@ class HBNBCommand(cmd.Cmd):
 
         if line in listClass:
                 newBM = eval(nameClass)()
+                newBM.save()
                 print(newBM.id)
         else:
                 print("** class doesn't exist **")
@@ -127,7 +134,7 @@ class HBNBCommand(cmd.Cmd):
         if len(data) < 4:
             print("** value missing **")
 
-        setattr(obj, data[3], data[4])
+        setattr(obj, data[2], data[3])
         setattr(obj, "updated_at", datetime.now())
         storage.save()
 
