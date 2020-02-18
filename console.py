@@ -91,6 +91,7 @@ class HBNBCommand(cmd.Cmd):
             dictObj = storage.all()
             if idObject in dictObj:
                 del dictObj[idObject]
+                storage.save()
                 return
             print("** no instance found ** ")
         else:
