@@ -22,6 +22,7 @@ class FileStorage:
 
     def __init__(self):
         """constructor"""
+        pass
 
     def all(self):
         """returns the dictionary"""

@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 '''Tests for BaseModel class'''
-
-from models.base_model import BaseModel
 import models
+from models.base_model import BaseModel
 import os
 import unittest
+
 
 class TestBase_Model(unittest.TestCase):
     '''start tests'''
@@ -12,18 +12,21 @@ class TestBase_Model(unittest.TestCase):
     def test_docstring(self):
         '''test if funcions, methods, classes
         and modules have docstring'''
-        self.assertIsNotNone(models.base_model.__doc__,
-        "Módulo does not has docstring") # Modules
-        self.assertIsNotNone(BaseModel.__doc__,
-        "Clase does not has docstring") # Classes
-  
+        msj = "Módulo does not has docstring"
+        self.assertIsNotNone(models.base_model.__doc__, msj)  # Modules
+        msj = "Clase does not has docstring"
+        self.assertIsNotNone(BaseModel.__doc__, msj)  # Classes
+
     def test_executable_file(self):
         '''test if file has permissions u+x to execute'''
-        is_read_true = os.access('models/base_model.py', os.R_OK) # Check for read access
+        # Check for read access
+        is_read_true = os.access('models/base_model.py', os.R_OK)
         self.assertTrue(is_read_true)
-        is_write_true = os.access('models/base_model.py', os.W_OK) # Check for write access
+        # Check for write access
+        is_write_true = os.access('models/base_model.py', os.W_OK)
         self.assertTrue(is_write_true)
-        is_exec_true = os.access('models/base_model.py', os.X_OK) # Check for execution access  
+        # Check for execution access
+        is_exec_true = os.access('models/base_model.py', os.X_OK)
         self.assertTrue(is_exec_true)
 
     def test_is_an_instance(self):
@@ -40,7 +43,8 @@ class TestBase_Model(unittest.TestCase):
     def test_str(self):
         '''check if the output of str is in the specified format'''
         my_model4 = BaseModel()
-        string1 = "[BaseModel] ({}) {}".format(my_model4.id, my_model4.__dict__)
+        _dict = my_model4.__dict__
+        string1 = "[BaseModel] ({}) {}".format(my_model4.id, _dict)
         string2 = str(my_model4)
         self.assertEqual(string1, string2)
 
