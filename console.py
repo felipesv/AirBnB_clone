@@ -100,14 +100,14 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, line):
         '''all command'''
         dictObj = storage.all()
+        listClass = ["BaseModel", "User", "Place", "State", "City", "Amenity",
+                     "Review"]
         if not line:
             newList = []
             for value in dictObj.values():
                     newList.append(str(value))
             print(newList)
         else:
-            listClass = ["BaseModel", "User", "Place", "State", "City", "Amenity",
-                     "Review"]
 
             data = line.split(" ")
             if data[0] not in listClass:
@@ -130,20 +130,25 @@ class HBNBCommand(cmd.Cmd):
         data = line.split(" ")
         dictObj = storage.all()
 
-        if data[0] not in listClass:
+        if len(data) == 0 or data[0] not in listClass:
             print("** class doesn't exist **")
-        if len(data) < 2:
+            return
+        if len(data) == 1:
             print("** instance id missing **")
+            return
 
         try:
             obj = dictObj["{}.{}".format(data[0], data[1])]
         except:
             print("** no instance found **")
+            return
 
-        if len(data) < 3:
+        if len(data) == 2:
             print("** attribute name missing **")
-        if len(data) < 4:
+            return
+        if len(data) == 3:
             print("** value missing **")
+            return
 
         setattr(obj, data[2], data[3])
         setattr(obj, "updated_at", datetime.now())
