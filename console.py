@@ -87,13 +87,12 @@ class HBNBCommand(cmd.Cmd):
                 print("** instance id missing **")
                 return
 
-            try:
-                idObject = "{}.{}".format(data[0], data[1])
-                dictObj = storage.all()
+            idObject = "{}.{}".format(data[0], data[1])
+            dictObj = storage.all()
+            if idObject in dictObj:
                 del dictObj[idObject]
-                storage.save()
-            except:
-                print("** no instance found ** ")
+                return
+            print("** no instance found ** ")
         else:
             print("** class doesn't exist **")
 
