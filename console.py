@@ -106,7 +106,13 @@ class HBNBCommand(cmd.Cmd):
                     newList.append(str(value))
             print(newList)
         else:
+            listClass = ["BaseModel", "User", "Place", "State", "City", "Amenity",
+                     "Review"]
+
             data = line.split(" ")
+            if data[0] not in listClass:
+                print("** class doesn't exist **")
+                return
             newList = []
             for value in dictObj.values():
                 if(value.__class__.__name__ == data[0]):
