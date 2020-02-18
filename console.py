@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''create a console'''
 import cmd
+import shlex
 from models.base_model import BaseModel
 from models.amenity import Amenity
 from models.city import City
@@ -127,7 +128,7 @@ class HBNBCommand(cmd.Cmd):
 
         listClass = ["BaseModel", "User", "Place", "State", "City", "Amenity",
                      "Review"]
-        data = line.split(" ")
+        data = shlex.split(line)
         dictObj = storage.all()
 
         if len(data) == 0 or data[0] not in listClass:
