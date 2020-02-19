@@ -44,7 +44,7 @@ class HBNBCommand(cmd.Cmd):
 
         if data[0] in listClass:
             newBM = eval(nameClass)()
-            newBM.save()
+            storage.save()
             print(newBM.id)
         else:
             print("** class doesn't exist **")
@@ -96,7 +96,7 @@ class HBNBCommand(cmd.Cmd):
                 del dictObj[idObject]
                 storage.save()
                 return
-            print("** no instance found ** ")
+            print("** no instance found **")
         else:
             print("** class doesn't exist **")
 
