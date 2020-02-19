@@ -14,6 +14,8 @@ from datetime import datetime
 
 
 class HBNBCommand(cmd.Cmd):
+    ''' Console '''
+
     prompt = '(hbnb) '
 
     def do_EOF(self, line):
@@ -32,8 +34,8 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, line):
         '''Create commands'''
         if not line:
-                print("** class name missing **")
-                return
+            print("** class name missing **")
+            return
 
         listClass = ["BaseModel", "User", "Place", "State", "City", "Amenity",
                      "Review"]
@@ -41,11 +43,11 @@ class HBNBCommand(cmd.Cmd):
         nameClass = data[0]
 
         if data[0] in listClass:
-                newBM = eval(nameClass)()
-                newBM.save()
-                print(newBM.id)
+            newBM = eval(nameClass)()
+            newBM.save()
+            print(newBM.id)
         else:
-                print("** class doesn't exist **")
+            print("** class doesn't exist **")
 
     def do_show(self, line):
         '''show commands'''
@@ -106,7 +108,7 @@ class HBNBCommand(cmd.Cmd):
         if not line:
             newList = []
             for value in dictObj.values():
-                    newList.append(str(value))
+                newList.append(str(value))
             print(newList)
         else:
 
@@ -163,8 +165,7 @@ class HBNBCommand(cmd.Cmd):
                 valObj = str(data[3])
 
         setattr(obj, data[2], valObj)
-        setattr(obj, "updated_at", datetime.now())
-        storage.save()
+        obj.save()
 
     def do_count(self, line):
         '''count command'''
@@ -184,31 +185,6 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
 
-    def default(self, line):
-        '''others commands'''
-        data = line.split(".")
-        if len(data) < 2:
-            return
-        listFn = ["all()", "count()"]
-        if data[1] in listFn:
-            cmdString = "{}".format(data[0])
-            if data[1] == listFn[0]:
-                self.do_all(cmdString)
-            elif data[1] == listFn[1]:
-                self.do_count(cmdString)
-        else:
-            data = data[1].split("(")
-            listFn = ["show", "update"]
-            if data[0] in listFn:
-                data[1] = data[1][:-1]
-                if len(data[1]) > 2:
-                    print("care chimba")
-                else:
-                    print("care chimba 2")
-                # if data[0] == listFn[0]:
-            else:
-                print("** command doesn't exist **")
-
 
 if __name__ == "__main__":
-        HBNBCommand().cmdloop()
+    HBNBCommand().cmdloop()
