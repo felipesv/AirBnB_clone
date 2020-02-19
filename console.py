@@ -189,15 +189,15 @@ class HBNBCommand(cmd.Cmd):
             elif data[1] == listFn[1]:
                 self.do_count(cmdString)
         else:
+            command = data[0]
             data = data[1].split("(")
             listFn = ["show", "update"]
             if data[0] in listFn:
                 data[1] = data[1][:-1]
-                if len(data[1]) > 2:
-                    print("care chimba")
-                else:
-                    print("care chimba 2")
-                # if data[0] == listFn[0]:
+                data[1] = shlex.split(data[1])
+                command += " {}".format(data[1][0])
+                fnexc = "self.do_{}('{}')".format(data[0], command)
+                eval(fnexc)
             else:
                 print("** command doesn't exist **")
 
