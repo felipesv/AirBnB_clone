@@ -37,10 +37,10 @@ class HBNBCommand(cmd.Cmd):
 
         listClass = ["BaseModel", "User", "Place", "State", "City", "Amenity",
                      "Review"]
-        data = line.split(" ")
+        data = shlex.split(line)
         nameClass = data[0]
 
-        if line in listClass:
+        if data[0] in listClass:
                 newBM = eval(nameClass)()
                 newBM.save()
                 print(newBM.id)
@@ -151,7 +151,17 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
             return
 
-        setattr(obj, data[2], data[3])
+        valObj = data[3]
+
+        try:
+            valObj = int(data[3])
+        except:
+            try:
+                valObj = float(data[3])
+            except:
+                valObj = str(data[3])
+
+        setattr(obj, data[2], valObj)
         setattr(obj, "updated_at", datetime.now())
         storage.save()
 
