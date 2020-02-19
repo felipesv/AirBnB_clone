@@ -1,7 +1,7 @@
 # AirBnB clone
 Airbnb is an online marketplace that connects people who want to rent out their homes with people who are looking for accommodations in that locale. ... For hosts, participating in Airbnb is a way to earn some income from their property, but with the risk that the guest might do damage to it.
 
-# Objectives
+# Objectives 🚀
 
  - How to create a Python package
  - How to create a command interpreter in Python using the cmd module
@@ -14,7 +14,7 @@ Airbnb is an online marketplace that connects people who want to rent out their 
  - What is **kwargs and how to use it
  - How to handle named arguments in a function
 
-# Requirements
+# Requirements 🔧
 ### Python Scripts
  - Allowed editors: vi, vim, emacs
  - All your files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3)
@@ -66,7 +66,46 @@ But also in non-interactive mode: (like the Shell project in C)
 > (hbnb) 
 > $
 
-# Tasks
+# Tasks Search Results
+Images for objective emoji
+Guided Search Filters
+transparent background
+iphone
+difficult
+summertime
+self evaluation
+text
+exit ticket
+q&a
+educational
+regret
+peek a boo
+mixed feeling
+swift
+sad
+messy
+confusion
+ios
+rough day
+passed out
+money
+Image result for objective emoji
+Image result for objective emoji
+Image result for objective emoji
+Image result for objective emoji
+Image result for objective emoji
+Image result for objective emoji
+Image result for objective emoji
+Image result for objective emoji
+Image result for objective emoji
+Image result for objective emoji
+Image result for objective emoji
+Image result for objective emoji
+More images for objective emoji
+Report images
+Web results
+
+# Tasks 🎯
 
 ### 0. README, AUTHORS 
 Write a README.md with description of the project and description of the command interpreter.
@@ -148,7 +187,7 @@ In the terminal type ./console.py + ente
 ## How it works
 <p align="center"><img src="https://github.com/felipesv/AirBnB_clone/blob/master/AirBnB%20Cone.png" alt="diagrama"></a></p>
 
-## Authors
+## Authors 🧑
 
  - [DIEGO BETANCOURT](https://github.com/dfbq91)
  - [FELIPE SATIZABAL](https://github.com/felipesv)
