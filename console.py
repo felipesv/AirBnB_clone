@@ -191,7 +191,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             command = data[0]
             data = data[1].split("(")
-            listFn = ["show", "update"]
+            listFn = ["show", "destroy"]
             if data[0] in listFn:
                 data[1] = data[1][:-1]
                 data[1] = shlex.split(data[1])
