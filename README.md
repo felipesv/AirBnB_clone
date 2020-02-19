@@ -145,3 +145,14 @@ In the terminal type ./console.py + ente
 > $./console.py
 > (hbnb) update <class name> <id instance> <attr name> <"attr value"> 
 
+## How it works
+<p align="center"><img src="https://github.com/felipesv/AirBnB_clone/blob/master/AirBnB%20Cone.png" alt="diagrama"></a></p>
+
+## Authors
+
+ - [DIEGO BETANCOURT](https://github.com/dfbq91)
+ - [FELIPE SATIZABAL](https://github.com/felipesv)
+
+## License
+
+Project for:  [Holberton School](https://www.holbertonschool.com/)
