@@ -29,7 +29,7 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         '''Empty line'''
-        pass
+        return ""
 
     def do_create(self, line):
         '''Create commands'''
@@ -176,7 +176,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
 
-    def precmd(self, line):
+    def default(self, line):
         '''others commands'''
         data = line.split(".")
         if len(data) < 2:
