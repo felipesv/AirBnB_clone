@@ -118,7 +118,8 @@ class HBNBCommand(cmd.Cmd):
             for value in dictObj.values():
                 if(value.__class__.__name__ == data[0]):
                     newList.append(str(value))
-            print(newList)
+            if newList:
+                print(newList)
 
     def do_update(self, line):
         '''update command'''
