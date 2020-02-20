@@ -202,18 +202,18 @@ class HBNBCommand(cmd.Cmd):
             elif data[0] in listFn2:
                 fnexc = "self.do_{}".format(data[0])
                 fnexc += "('{}".format(command)
+                data[1] = data[1].replace("\"", "")
                 data[1] = data[1].split(",")
                 if len(data[1]) == 1:
                     fnexc += " {}')".format(data[1][0][0:-1].strip())
                 elif len(data[1]) == 2:
-                    print(data[1][1])
                     fnexc += " {} {}')".format(data[1][0].strip(),
                                                data[1][1][:-1].strip())
                 elif len(data[1]) >= 3:
-                    print(data[1][1])
-                    fnexc += " {} {} {}')".format(data[1][0].strip(),
-                                                  data[1][1][:-1].strip(),
-                                                  data[1][2][:-1].strip())
+                    fnexc += " {} {} \"{}\"')".format(data[1][0].strip(),
+                                                      data[1][1].strip(),
+                                                      data[1][2][:-1].strip())
+
                 eval(fnexc)
             else:
                 print("** command doesn't exist **")
