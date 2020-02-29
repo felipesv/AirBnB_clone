@@ -28,16 +28,17 @@
 	height: 100%;
 	width: 25%;
 	display: inline-block;
-	margin-left: 45px;
 }
 
 .locations {
 	border-right: 1px solid #DDDDDD;
+	float: left;
 }
 
 .locationTitle {
 	color: #000000;
 	font-weight: 600;
+	padding-left: 45px;
 }
 
 .locationSubtitle, .amenitiesSubtitle {
@@ -45,10 +46,11 @@
 	font-weight: 400;
 	font-size: 14px;
 	margin-top: -16px;
+	padding-left: 45px;
 }
-
 
 .amenitiesTitle {
 	color: #000000;
 	font-weight: 600;
+	padding-left: 45px;
 }
